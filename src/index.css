@@ -1,0 +1,160 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800;900&display=swap");
+
+@import "tailwindcss";
+
+:root {
+  font-family: "Noto Sans Devanagari", sans-serif;
+  color: #e5e7eb;
+  background: #050816;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+  background:
+    radial-gradient(
+      circle at 10% 10%,
+      rgba(79, 70, 229, 0.16),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 90% 20%,
+      rgba(14, 165, 233, 0.1),
+      transparent 30%
+    ),
+    #050816;
+}
+
+button,
+input {
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: #6366f1;
+  color: white;
+}
+
+.app-bg {
+  min-height: calc(100vh - 72px);
+  position: relative;
+  overflow: hidden;
+}
+
+.app-bg::before,
+.app-bg::after {
+  content: "";
+
+  position: fixed;
+
+  width: 420px;
+  height: 420px;
+
+  border-radius: 50%;
+  filter: blur(100px);
+
+  pointer-events: none;
+  z-index: -1;
+}
+
+.app-bg::before {
+  top: -150px;
+  left: -150px;
+  background: rgba(99, 102, 241, 0.14);
+}
+
+.app-bg::after {
+  right: -150px;
+  bottom: -150px;
+  background: rgba(6, 182, 212, 0.1);
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.68);
+
+  border: 1px solid rgba(148, 163, 184, 0.14);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  box-shadow:
+    0 25px 80px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.glow {
+  box-shadow:
+    0 0 0 1px rgba(99, 102, 241, 0.15),
+    0 0 40px rgba(99, 102, 241, 0.15);
+}
+
+.gradient-text {
+  background:
+    linear-gradient(
+      90deg,
+      #818cf8,
+      #c084fc,
+      #22d3ee
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(99, 102, 241, 0.35);
+  }
+
+  50% {
+    box-shadow:
+      0 0 0 12px rgba(99, 102, 241, 0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #080b18;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #303657;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1;
+}
+
